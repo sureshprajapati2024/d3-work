@@ -10,9 +10,16 @@ const xScale=d3
 .rangeRound([0,250])
 .padding(0.1);
 const yScale=d3.scaleLinear().domain([0,20]).range([200,0]);
+
+var line = d3.line()
+        .x(function (d, i) { return xScale(i); }) 
+        .y(function (d) { return yScale(d.y); })  
+        .curve(d3.curveMonotoneX) 
+
  const container= d3.select('svg')
 .classed('container',true)
 .style('border','1px solid red');
+
 
  const bars= container.selectAll('.bar')
 .data(DUMMY_DATA)
