@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line chart</title>
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div id="container" class="svg-container"></div>
+    <script>
+        const width = 960;
+const height = 500;
+const margin = 5;
+const padding = 5;
+const adj = 30;
+
+const svg = d3.select("div#container").append("svg")
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "-"
+          + adj + " -"
+          + adj + " "
+          + (width + adj *3) + " "
+          + (height + adj*3))
+    .style("padding", padding)
+    .style("margin", margin)
+    .classed("svg-content", true);
+    </script>
+</body>
+</html>
